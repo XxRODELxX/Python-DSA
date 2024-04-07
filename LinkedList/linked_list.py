@@ -8,14 +8,14 @@ class Node:
 
 class LinkedList:
     def __init__(self, value):
-        # Creates new node
+        '''Creates new node'''
         new_node = Node(value)
         self.head = new_node
         self.tail = new_node
         self.length = 1
 
     def append(self, value):
-        # Add new node at the end of LL
+        '''Add new node at the end of LL'''
         new_node = Node(value)
         if self.length == 0:
             self.head = new_node
@@ -26,7 +26,7 @@ class LinkedList:
         self.length += 1
 
     def prepend(self, value):
-        # Add new node at the beginning of LL
+        '''Add new node at the beginning of LL'''
         new_node = Node(value)
         if self.length == 0:
             self.head = new_node
@@ -38,7 +38,7 @@ class LinkedList:
         return True
 
     def insert(self, index, value):
-        # Insert new node at positional location of LL
+        '''Insert new node at positional location of LL'''
         if index < 0 or index > self.length:
             return False
         if index == 0:
@@ -53,7 +53,7 @@ class LinkedList:
         return True
 
     def pop(self):
-        # Pop (removes) and returns tail/last item of the linked list
+        '''Pop (removes) and returns tail/last item of the linked list'''
         if self.length == 0:
             print("No items/nodes in the Linked List to pop.")
             return None
@@ -73,7 +73,7 @@ class LinkedList:
         return temp
 
     def pop_first(self):
-        # Pop (removes) and returns head/first item of the linked list
+        '''Pop (removes) and returns head/first item of the linked list'''
         if self.length == 0:
             print("No items/nodes in the Linked List to pop.")
             return None
@@ -87,6 +87,7 @@ class LinkedList:
         return temp
 
     def get(self, index):
+        '''Get item by index'''
         if index < 0 or index > self.length:
             return None
 
@@ -96,6 +97,7 @@ class LinkedList:
         return temp
 
     def set_value(self, index, value): # set is a Python keyword
+        '''Sets new value by index'''
         temp = self.get(index)
         if temp:
             temp.value = value
@@ -103,6 +105,7 @@ class LinkedList:
         return False
 
     def remove(self, index):
+        '''Removes an item by index'''
         if index < 0 or index >= self.length:
             return None
         if index == 0:
@@ -118,6 +121,7 @@ class LinkedList:
         return temp
          
     def reverse(self):
+        '''Reverses the linked list'''
         temp = self.head
         self.head = self.tail
         self.tail = temp
